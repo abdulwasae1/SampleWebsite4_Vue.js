@@ -1,0 +1,54 @@
+// app global css in SCSS form
+@mixin fluid-font-size($minimumSize, $maximumSize, $minimumViewportWidth, $maximumViewportWidth) {
+  font-size: calc(#{$minimumSize}px + (#{$maximumSize} - #{$minimumSize}) * ((100vw - #{$minimumViewportWidth}px) / (#{$maximumViewportWidth} - #{$minimumViewportWidth}))) !important;
+}
+@for $num from 2 through 30 {
+  .fontsize-#{$num} {
+    @include fluid-font-size($num, ($num * 2 + 2), 300, 1800);
+  }
+}
+
+.responsive-text2 {
+  font-size: 45px;
+}
+@media (max-width: 1500px) {
+  .responsive-text2 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 1250px) {
+  .responsive-text2 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 850px) {
+  .responsive-text2 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 550px) {
+  .responsive-text2 {
+    font-size: 15px;
+  }
+}
+.cards {
+  background-color: rgb(154, 213, 255);
+  color: rgb(0, 0, 0);
+}
+.cards:hover {
+  background-color: rgb(236, 122, 51);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+.cards2 {
+  box-shadow: 10px 10px 20px rgb(172, 170, 170);
+}
+.cards2:hover {
+  background-color: rgb(93, 163, 121);
+}
+.text {
+  color: black;
+}
+.text:hover {
+  color: aliceblue;
+}
